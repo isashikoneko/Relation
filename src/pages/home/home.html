@@ -1,17 +1,55 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <button ion-button menuToggle ion-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-buttons end>
+      <button ion-button ion-only>
+          <ion-icon name="notifications"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content class="card-background-page">
+
+  <ion-card *ngFor="let item of ad_list; let i = index">
+
+    <ion-item>
+
+      <ion-avatar item-start>
+        <img src="{{ item.profile_photo }}">
+      </ion-avatar>
+
+      <h2>{{ item.name }}</h2>
+      <p>{{item.grade}}</p>
+
+      <div item-end>
+
+        <ion-icon name="send"></ion-icon>
+        {{ item.quantity }}
+
+      </div>
+
+    </ion-item>
+
+    <ion-card-content> 
+      <ion-card-title>
+        Montant de la prime: {{ item.prime }}
+      </ion-card-title>
+
+      <p style="overflow: hidden;"> 
+        {{ item.description }}
+      </p>
+      <a href="javascript:void(0)" (click)="detail(i)" >Voir plus</a>
+
+    </ion-card-content>
+
+    <ion-item *ngFor="let i of item.photo">
+      <img src="{{i}}">
+    </ion-item>
+
+  </ion-card>
+
 </ion-content>

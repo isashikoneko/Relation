@@ -1,0 +1,35 @@
+<!--
+  Generated template for the CreateOfferPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cree une annonce</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div style="padding-top: 25%;">
+
+    <p>
+      Vous allez recharger votre compte, a partir de votre compte Mobile Banking, avec la prime du vendeur s'elevant a {{prime}} Francs CFA (Frais de transfert d'argent et tous autre frais inclus).
+    </p>
+    <p>
+      Cependant, vous pouvez retirer cet argent a tout moment si votre produit n'est pas vendu par un vendeur
+    </p>
+
+    <button ion-button block (click) = "pay('OM')">A partir d'Orange Money</button>
+
+    <button ion-button block (click) = "pay('MoovM')">A partir de Moov Money</button>
+
+    <button ion-button block (click) = "pay('MTNM')">A partir de MTN Mobile Money</button>
+
+  </div>
+
+</ion-content>

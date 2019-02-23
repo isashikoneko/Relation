@@ -1,6 +1,8 @@
 {
   "name": "Relation",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "id": "d516c96e"
 }

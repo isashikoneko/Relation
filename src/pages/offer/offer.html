@@ -1,0 +1,61 @@
+<!--
+  Generated template for the CreateOfferPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title #title>Cree une annonce</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div style="padding-top: 25%;">
+
+    <ion-list no-lines inset>
+
+      <form [formGroup]="myForm" (ngSubmit)="create()" >
+
+        <ion-item>
+          <ion-input type="text" placeholder="Titre de l'annonce" formControlName="title"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Category de produit</ion-label>
+          <ion-select formControlName="category">
+            <ion-option *ngFor="let item of category" [value]="item.id">{{item.title}}</ion-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item> 
+          <ion-input type="number" placeholder="Prix" formControlName="price"></ion-input>
+        </ion-item>
+
+        <ion-item> 
+          <ion-input type="number" placeholder="Quantite" formControlName="quantity"></ion-input>
+        </ion-item>
+
+        <ion-item> 
+          <ion-input type="number" placeholder="Prime" formControlName="prime"></ion-input>
+        </ion-item>
+
+        <ion-item> 
+          <ion-textarea placeholder="Decrivez votre ou vos produit" formControlName="description"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <button ion-button type="submit" [disabled]="!myForm.valid" block>Suivant</button>
+        </ion-item>
+
+      </form>
+
+    </ion-list>
+
+  </div>
+
+</ion-content>
